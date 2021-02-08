@@ -1,8 +1,5 @@
 package ru.netology.domain;
 
-
-import java.util.Date;
-
 public class Post {
     private int idPost; //id поста
     private int idСreator; // id создателя поста
@@ -11,55 +8,15 @@ public class Post {
     private boolean saveBookmark; // сохранить в закладках
     private AttachmentsPost attachmentsPost; //вложения в пост (фото видео и т.д.)
     private ComplaintsPost complaintsPost; //жалоба
-    private LikePost LikePost; //лайк
+    private LikePost likePost; //лайк
     private CommentsPost commentsPost; //комментарии
     private SharePost sharepost;  // поделится постом
     private ReasonComplaints reasonComplaints;  //причина жалобы
     private int viewsPost; // счетчик просмотров, решил не усложнять в идеале нужно вести статистику
 
-    public class PostInfo {
-        private int idPostInfo; // id поста
-        private int idAuthor; // id автора
-        private String textComplaint; //текс поста
-        private String urlPostInfo; //ссылка на вложение
-    }
-
-    public class ComplaintsPost {
-        private int idComplaint; // id жалобы
-        private int idAuthor; // id автора
-        private int idReasonComplaint; //id причины жалобы
-    }
-
-    public class AttachmentsPost {
-        private int idAttachment; // id вложения
-        private int idAuthor; // id автора
-        private String urlAttachment; //ссылка на вложение
-    }
-
-    public class LikePost {
-        private int idLikePost; // id лайкнутого поста
-        private int idLikeAuthor; // id автора лайка //если бы были дизлайки нужно добавить boolean
-        private int likePost; //счетчик лайков
-    }
-
-    public class CommentsPost {
-        private int idComments; // id комментария
-        private int idAuthorComments; // id автора
-        private String textComments; //текс коментария
-    }
-
-    private class SharePost {
-        private int idSharePost; // id  поста
-        private int idSareAuthor; // id автора
-        private int SharePost; //счетчик
-
-    }
-
-    private class ReasonComplaints {
-        private int idReasonComplaint; //id причины жалобы
-        private String reasonComplaint; //текст жалобы
-    }
     // + get/set на все поля
+
+
     public int getIdPost() {
         return idPost;
     }
@@ -76,12 +33,12 @@ public class Post {
         this.idСreator = idСreator;
     }
 
-    public int getDataPost() {
+    public int getDatePost() {
         return datePost;
     }
 
-    public void setDataPost(int dataPost) {
-        this.datePost = dataPost;
+    public void setDatePost(int datePost) {
+        this.datePost = datePost;
     }
 
     public PostInfo getPostInfo() {
@@ -112,16 +69,16 @@ public class Post {
         return complaintsPost;
     }
 
-    public void setComplaintPost(ComplaintsPost complaintPost) {
-        this.complaintsPost = complaintPost;
+    public void setComplaintsPost(ComplaintsPost complaintsPost) {
+        this.complaintsPost = complaintsPost;
     }
 
-    public Post.LikePost getLikePost() {
-        return LikePost;
+    public LikePost getLikePost() {
+        return likePost;
     }
 
-    public void setLikePost(Post.LikePost likePost) {
-        LikePost = likePost;
+    public void setLikePost(LikePost likePost) {
+        this.likePost = likePost;
     }
 
     public CommentsPost getCommentsPost() {
@@ -144,8 +101,8 @@ public class Post {
         return reasonComplaints;
     }
 
-    public void setReasonComplaint(ReasonComplaints reasonComplaint) {
-        this.reasonComplaints = reasonComplaint;
+    public void setReasonComplaints(ReasonComplaints reasonComplaints) {
+        this.reasonComplaints = reasonComplaints;
     }
 
     public int getViewsPost() {
@@ -155,6 +112,4 @@ public class Post {
     public void setViewsPost(int viewsPost) {
         this.viewsPost = viewsPost;
     }
-
-
 }
