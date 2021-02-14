@@ -1,31 +1,40 @@
 package ru.netology.domain;
 
 public class LikePost {
-    private int idLikePost; // id лайкнутого поста
-    private int idLikeAuthor; // id автора лайка //если бы были дизлайки нужно добавить boolean
-    private int likePost; //счетчик лайков
+    private int count; // число пользователей, которым
+    private boolean userLikes; //  наличие отметки «Мне нравится»
+    private boolean canLikes;  //информация о том, может ли текущий пользователь поставить отметку
+    private boolean canPublish; //информация о том, может ли текущий пользователь сделать репост
 
-    public int getIdLikePost() {
-        return idLikePost;
+    public int getCount() {
+        return count;
     }
 
-    public void setIdLikePost(int idLikePost) {
-        this.idLikePost = idLikePost;
+    public void setCount(int count) {
+        this.count = count;
     }
 
-    public int getIdLikeAuthor() {
-        return idLikeAuthor;
+    public boolean isUserLikes() {
+        return userLikes;
     }
 
-    public void setIdLikeAuthor(int idLikeAuthor) {
-        this.idLikeAuthor = idLikeAuthor;
+    public void setUserLikes(boolean userLikes) {
+        this.userLikes = userLikes;
     }
 
-    public int getLikePost() {
-        return likePost;
+    public boolean isCanLikes() {
+        return canLikes;
     }
 
-    public void setLikePost(int likePost) {
-        this.likePost = likePost;
+    public void setCanLikes(boolean canLikes) {
+        this.canLikes = canLikes;
+    }
+
+    public boolean isCanPublish() {
+        return canPublish;
+    }
+
+    public void setCanPublish(boolean canPublish) {
+        this.canPublish = canPublish;
     }
 }
